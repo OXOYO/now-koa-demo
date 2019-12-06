@@ -10,7 +10,8 @@ app.use(async (ctx, next) => {
 });
 
 app.use(async (ctx) => {
-  ctx.body = 'Hello from koa.js!';
+  const query = ctx.query
+  ctx.body = 'Hello from koa.js!The query string is' + JSON.stringify(query);
 });
 
 module.exports = app.callback();
